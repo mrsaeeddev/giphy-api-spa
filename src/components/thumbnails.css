@@ -1,0 +1,12 @@
+.gif-wrap {
+    background-color: #fff;
+    margin-bottom: .8em;
+    position: relative;
+  }
+
+.gif-wrap img {
+    min-width: 100%; /* You can set the dimensions to whatever you want */
+    height: 200px;
+    object-fit: cover;
+}
+  

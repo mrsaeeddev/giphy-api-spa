@@ -1,8 +1,6 @@
-import { useState } from "react";
 import { Modal } from "react-bootstrap";
-import Image from './Image';
-import Video from './Video';
-import './thumbnails.css';
+import Image from '../Image/Image';
+import Video from '../Video/Video';
 
 function LargeModal(props: any) {
     return (

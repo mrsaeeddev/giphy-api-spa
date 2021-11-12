@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { Row, Col } from "react-bootstrap";
-import Image from "./Image";
-import LargeModal from "./Modal";
-import './thumbnails.css';
+import Image from "../Image/Image";
+import LargeModal from "../Modal/Modal";
 
 function Thumbnails(props: any) {
     const [lgShow, setLgShow] = useState(false);

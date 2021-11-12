@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { Row, Col, Image, Container } from 'react-bootstrap';
-import Paginate from "../components/Paginate";
-import Search from "../components/Search";
-import Loader from "../components/Loader";
+import Paginate from "../components/Paginate/Paginate";
+import Search from "../components/Search/Search";
+import Loader from "../components/Loader/Loader";
 import { getGifsByTrending, getGifsBySearch } from "../service/services";
-import Thumbnails from "../components/Thumbnails";
-import AlertBox from "../components/Alert";
+import Thumbnails from "../components/Thumbnails/Thumbnails";
+import AlertBox from "../components/Alert/Alert";
 
 function Main() {
     const [data, setData] = useState([]);

@@ -1,4 +1,4 @@
-import "./thumbnails.css"
+import "./image.css"
 
 function Image(props: any) {
     return (

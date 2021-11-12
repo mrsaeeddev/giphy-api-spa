@@ -8,6 +8,12 @@ describe('AlertBox Component', () => {
         cy.get('div').contains(text);
     });
 
+    it('renders fallback error message correctly', () => {
+        const fallbackErr = "Unexpected error"
+        mount(<AlertBox />);
+        cy.get('div').contains(fallbackErr);
+    });
+
     it('takes variant prop and renders relevant classes correctly', () => {
         const variant = "warning"
         mount(<AlertBox variant={variant} />);

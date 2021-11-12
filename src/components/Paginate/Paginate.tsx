@@ -49,7 +49,7 @@ function Paginate(props: any) {
             }
         }
         setPageArray(pageArr);
-    }, [props.currentPage]);
+    }, [props.currentPage, props.totPages]);
 
     return (
         <>

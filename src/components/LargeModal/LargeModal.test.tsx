@@ -2,7 +2,7 @@ import { mount } from '@cypress/react';
 import LargeModal from './LargeModal';
 
 describe('LargeModal Component', () => {
-    it('shows  correctly when value of lgShow prop is true', () => {
+    it('shows correctly when value of lgShow prop is true', () => {
         const images = {
             downsized: {
                 height: "200",

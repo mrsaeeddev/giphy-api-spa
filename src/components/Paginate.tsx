@@ -5,13 +5,12 @@ function Paginate(props: any) {
     const [pageArray, setPageArray] = useState([]);
 
     useEffect(() => {
-        var totPages = parseInt(props.totPages);
-        console.log(totPages)
-        var currentPage = parseInt(props.currentPage);
-        var pageArr = [] as any;
+        let totPages = parseInt(props.totPages);
+        let currentPage = parseInt(props.currentPage);
+        let pageArr = [] as any;
         if (totPages > 1) {
             if (totPages <= 9) {
-                var i = 1;
+                let i = 1;
                 while (i <= totPages) {
                     pageArr.push(i);
                     i++;
@@ -112,7 +111,7 @@ function Paginate(props: any) {
                                     key={"nextpage"}
                                     onClick={
                                         props.currentPage === ele
-                                            ? () => { console.log('true') }
+                                            ? () => { }
                                             : () => {
                                                 props.pageClicked(props.currentPage + 1);
                                             }

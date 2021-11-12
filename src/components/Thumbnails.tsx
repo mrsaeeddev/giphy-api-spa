@@ -19,7 +19,7 @@ function Thumbnails(props: any) {
             {props.data.map((ele: any, ind: any) => {
                 return (
                     <>
-                        <Col>
+                        <Col key={ind}>
                             <Image onClick={() => activateModal(ele.images)} src={ele.images.fixed_height.url} alt="" />
                         </Col>
                     </>

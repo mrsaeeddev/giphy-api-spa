@@ -5,6 +5,7 @@ import Search from "../components/Search";
 import Loader from "../components/Loader";
 import { getGifsByTrending, getGifsBySearch } from "../service/services";
 import Thumbnails from "../components/Thumbnails";
+import AlertBox from "../components/Alert";
 
 function Main() {
     const [data, setData] = useState([]);
@@ -16,7 +17,6 @@ function Main() {
     const [currentState, setCurrentState] = useState("trending");
 
     useEffect(() => {
-        console.log(searchValue)
         if (currentState === "trending") {
             getTrendingData(offset);
         }
@@ -67,7 +67,7 @@ function Main() {
                     <Search onClick={() => getSearchData(0, searchValue)} onChange={(e: any) => onChangeSearch(e.target.value, "search")} onKeyDown={(e: any) => { if (e.key === "Enter") { onChangeSearch(e.target.value, "search"); getSearchData(0, searchValue); } }} />
                 </Col>
             </Row>
-
+            {!loading && data.length === 0 && <AlertBox text="⚠️ Either your query has no relevant data or there's an unexpected error. Reload to refresh the page or try some other query." variant="danger" />}
             {totalPages !== 0 && !loading ? <Paginate
                 totPages={totalPages}
                 currentPage={currPage}

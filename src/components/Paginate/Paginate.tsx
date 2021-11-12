@@ -58,7 +58,6 @@ function Paginate(props: any) {
                 <Pagination style={{ justifyContent: "center" }}>
                     {pageArray.map((ele, ind) => {
                         const toReturn = [];
-
                         if (ind === 0) {
                             toReturn.push(
                                 <Pagination.First

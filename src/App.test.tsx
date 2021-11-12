@@ -7,8 +7,13 @@ describe('App Component', () => {
     cy.get('h1').contains('Giphy SPA');
   });
 
-  it('renders className correctly', () => {
+  it('adds relevant CSS class to the container correctly', () => {
     mount(<App />);
-    cy.get('div').should('have.class', 'App')
+    cy.get('div').should('have.class', 'container')
+  });
+
+  it('adds relevant CSS class to the heading correctly', () => {
+    mount(<App />);
+    cy.get('h1').should('have.class', 'p-3')
   });
 });

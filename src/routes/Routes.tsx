@@ -4,7 +4,7 @@ import Main from "../pages/Main";
 
 function AllRoutes() {
   return (
-    <Container className="App">
+    <Container>
       <h1 className="p-3">Giphy SPA</h1>
       <Routes>
         <Route path="/" element={<Main />} />

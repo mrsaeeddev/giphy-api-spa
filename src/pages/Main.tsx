@@ -75,7 +75,7 @@ function Main() {
                     selectActivePage(ele);
                 }}
             >
-                {/* <Thumbnails data={data} /> */}
+                <Thumbnails data={data} />
             </Paginate> : <Loader />}
         </Container>
     );

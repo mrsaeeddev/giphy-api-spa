@@ -16,7 +16,7 @@ function LargeModal(props: any) {
                 </Modal.Title>
             </Modal.Header>
 
-            {props.images['480w_still'] && <Modal.Body>
+            {props.images && <Modal.Body>
                 {props.images['480w_still'] && <Image src={props.images['480w_still']?.url} />}
                 {props.images['downsized'] && <Image src={props.images['downsized']?.url} />}
                 {props.images['downsized_large'] && <Image src={props.images['downsized_large']?.url} />}

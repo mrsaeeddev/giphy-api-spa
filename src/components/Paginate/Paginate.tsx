@@ -54,8 +54,8 @@ function Paginate(props: any) {
     return (
         <>
             {props.children}
-            <div style={{ marginTop: "15px" }}>
-                <Pagination style={{ justifyContent: "center" }}>
+            <div className="m-5">
+                <Pagination className="justify-content-center">
                     {pageArray.map((ele, ind) => {
                         const toReturn = [];
                         if (ind === 0) {

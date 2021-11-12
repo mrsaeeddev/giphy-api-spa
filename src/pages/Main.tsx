@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Row, Col, Image, Container } from 'react-bootstrap';
+import { Row, Col, Container } from 'react-bootstrap';
 import Paginate from "../components/Paginate/Paginate";
 import Search from "../components/Search/Search";
 import Loader from "../components/Loader/Loader";

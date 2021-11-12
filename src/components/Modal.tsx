@@ -10,13 +10,14 @@ function LargeModal(props: any) {
             size="lg"
             show={props.lgShow}
             onHide={() => props.setLgShow(false)}
-            aria-labelledby="example-modal-sizes-title-lg"
+            aria-labelledby="gif-renderitions-modal"
         >
             <Modal.Header closeButton>
-                <Modal.Title id="example-modal-sizes-title-lg">
+                <Modal.Title id="gif-renderitions-modal">
                     GIF Renditions
                 </Modal.Title>
             </Modal.Header>
+
             {props.images['480w_still'] && <Modal.Body>
                 {props.images['480w_still'] && <Image src={props.images['480w_still']?.url} />}
                 {props.images['downsized'] && <Image src={props.images['downsized']?.url} />}

@@ -3,7 +3,7 @@ import { Row, Col, Image, Container } from 'react-bootstrap';
 import Paginate from "../components/Paginate";
 import Search from "../components/Search";
 import Loader from "../components/Loader";
-import { getTrendingGifs } from "../service/services";
+import { getGifsByTrending, getGifsBySearch } from "../service/services";
 import Thumbnails from "../components/Thumbnails";
 
 function Main() {
@@ -11,10 +11,18 @@ function Main() {
     const [totalPages, setTotalPages] = useState(0);
     const [loading, setLoading] = useState(false);
     const [currPage, setCurrPage] = useState(0);
+    const [searchValue, setSearchValue] = useState("");
     let [offset, setOffset] = useState(0);
+    const [currentState, setCurrentState] = useState("trending");
 
     useEffect(() => {
-        getTrendingData(offset);
+        console.log(searchValue)
+        if (currentState === "trending") {
+            getTrendingData(offset);
+        }
+        else {
+            getSearchData(offset, searchValue);
+        }
     }, [offset]);
 
     useEffect(() => {
@@ -29,16 +37,37 @@ function Main() {
     }
 
     const getTrendingData = async (offset: any) => {
-        await getTrendingGifs(offset).then((data) => {
+        await getGifsByTrending(offset).then((data) => {
             setData(data.data)
             setLoading(false)
             data.pagination.count !== 0 && setTotalPages(Math.floor(data.pagination.total_count / data.pagination.count))
         });
     }
 
+    const getSearchData = async (offset: any, searchValue: any) => {
+        setLoading(true);
+        setCurrentState("search");
+        await getGifsBySearch(offset, searchValue).then((data) => {
+            setData(data.data)
+            setLoading(false)
+            data.pagination.count !== 0 && setTotalPages(Math.floor(data.pagination.total_count / data.pagination.count))
+        });
+    }
+
+    const onChangeSearch = (value: any, currentState: any) => {
+        setCurrentState(currentState)
+        setSearchValue(value)
+    }
+
     return (
         <Container>
-            <Search />
+            <Row>
+                <Col sm={8} className="p-3">A single page app that leverages data from the Giphy API</Col>
+                <Col sm={4}>
+                    <Search onClick={() => getSearchData(0, searchValue)} onChange={(e: any) => onChangeSearch(e.target.value, "search")} onKeyDown={(e: any) => { if (e.key === "Enter") { onChangeSearch(e.target.value, "search"); getSearchData(0, searchValue); } }} />
+                </Col>
+            </Row>
+
             {totalPages !== 0 && !loading ? <Paginate
                 totPages={totalPages}
                 currentPage={currPage}

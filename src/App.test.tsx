@@ -1,8 +1,14 @@
-import React from 'react';
 import { mount } from '@cypress/react';
 import App from './App';
 
-it('renders app component text', () => {
-  mount(<App />);
-  cy.get('p').contains('App component');
+describe('App Component', () => {
+  it('renders heading correctly', () => {
+    mount(<App />);
+    cy.get('h1').contains('Giphy SPA');
+  });
+
+  it('renders className correctly', () => {
+    mount(<App />);
+    cy.get('div').should('have.class', 'App')
+  });
 });

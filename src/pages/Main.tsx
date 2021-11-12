@@ -5,7 +5,7 @@ import Search from "../components/Search/Search";
 import Loader from "../components/Loader/Loader";
 import { getGifsByTrending, getGifsBySearch } from "../service/services";
 import Thumbnails from "../components/Thumbnails/Thumbnails";
-import AlertBox from "../components/Alert/Alert";
+import AlertBox from "../components/AlertBox/AlertBox";
 
 function Main() {
     const [data, setData] = useState([]);
@@ -76,8 +76,7 @@ function Main() {
                 }}
             >
                 <Thumbnails data={data} />
-            </Paginate>
-                : <Loader />}
+            </Paginate> : <Loader />}
         </Container>
     );
 }

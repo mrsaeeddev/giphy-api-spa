@@ -15,5 +15,6 @@ A single-page web application that leverages data from the Giphy API
 - If you want to see tests in the headless mode, run `npx cypress run-ct`
 
 ### Notes
-- There's a problem with GIPHY API in which it gives wrong total_count and count values in some initial offset calls (sometimes) due to which pagination component shows extra pages. I've handled the error but since total count of pages depends on API response so to fix this, values from API need to be consistent.
-- 
+- There's a problem with GIPHY API in which it gives wrong `total_count` and `count` values in `pagination` object in some initial offset calls (sometimes) due to which pagination component shows extra pages. I've handled the error but since total count of pages depends on API response so to fix this, values from API need to be consistent.
+
+- It took me around 12 hours time to complete this project. I'll divide it in 6 hrs (implementation), 3 hrs (testing), and 3 hrs (improvements). I think testing took more time since Cypress was new for me. 

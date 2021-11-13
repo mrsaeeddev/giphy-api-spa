@@ -38,10 +38,14 @@ function Main() {
 
     const getTrendingData = async (offset: any) => {
         await getGifsByTrending(offset).then((data) => {
+            console.log(data)
             setData(data.data)
             setLoading(false)
             data.pagination.count !== 0 && setTotalPages(Math.floor(data.pagination.total_count / data.pagination.count))
-        });
+        }).catch((error) => {
+            setLoading(false)
+            console.log(error)
+        });;
     }
 
     const getSearchData = async (offset: any, searchValue: any) => {
@@ -68,7 +72,7 @@ function Main() {
                 </Col>
             </Row>
             {!loading && data.length === 0 && <AlertBox text="⚠️ Either your query has no relevant data or there's an unexpected error. Reload to refresh the page or try some other query." variant="danger" />}
-            {totalPages !== 0 && !loading ? <Paginate
+            {totalPages !== 0 && !loading && <Paginate
                 totPages={totalPages}
                 currentPage={currPage}
                 pageClicked={(ele: any) => {
@@ -76,7 +80,8 @@ function Main() {
                 }}
             >
                 <Thumbnails data={data} />
-            </Paginate> : <Loader />}
+            </Paginate>}
+            {loading && <Loader />}
         </Container>
     );
 }

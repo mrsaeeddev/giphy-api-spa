@@ -1,6 +1,7 @@
 import { InputGroup, FormControl } from "react-bootstrap";
+import { SearchProps } from "./Search.interface";
 
-function Search(props: any) {
+function Search(props: SearchProps) {
     return (
         <InputGroup className="mb-3">
             <InputGroup.Text id="search-bar" role="button" onClick={props.onClick}>🔍</InputGroup.Text>

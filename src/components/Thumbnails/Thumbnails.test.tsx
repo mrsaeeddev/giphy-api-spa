@@ -24,7 +24,7 @@ describe('Thumbnails Component', () => {
             },
             url: "https://giphy.com/gifs/mlb-los-angeles-angels-laa-fHsweg1kp5uzU3G1D4"
         }];
-        mount(<Thumbnails data={data} />);
+        mount(<Thumbnails data={data} meta={undefined} pagination={undefined} />);
         cy.get('img').should('have.attr', 'src');
     });
 
@@ -37,7 +37,7 @@ describe('Thumbnails Component', () => {
             },
             url: "https://giphy.com/gifs/mlb-los-angeles-angels-laa-fHsweg1kp5uzU3G1D4"
         }];
-        mount(<Thumbnails data={data} />);
+        mount(<Thumbnails data={data} meta={undefined} pagination={undefined} />);
         cy.get('div').should('have.class', 'gif-wrap');
     });
 
@@ -50,7 +50,7 @@ describe('Thumbnails Component', () => {
             },
             url: "https://giphy.com/gifs/mlb-los-angeles-angels-laa-fHsweg1kp5uzU3G1D4"
         }];
-        mount(<Thumbnails data={data} />);
+        mount(<Thumbnails data={data} meta={undefined} pagination={undefined} />);
         cy.get('div').should('have.class', 'col-lg-4 col-md-4 col-12');
     });
 });

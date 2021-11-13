@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { Pagination } from "react-bootstrap";
+import { PaginateProps } from "./Paginate.interface";
 
-function Paginate(props: any) {
+function Paginate(props: PaginateProps) {
     const [pageArray, setPageArray] = useState([]);
 
     useEffect(() => {
-        let totPages = parseInt(props.totPages);
-        let currentPage = parseInt(props.currentPage);
+        let totPages = Number(props.totPages);
+        let currentPage = Number(props.currentPage);
         let pageArr = [] as any;
         if (totPages > 1) {
             if (totPages <= 9) {

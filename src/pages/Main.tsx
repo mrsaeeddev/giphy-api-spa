@@ -38,7 +38,6 @@ function Main() {
 
     const getTrendingData = async (offset: any) => {
         await getGifsByTrending(offset).then((data) => {
-            console.log(data)
             setData(data.data)
             setLoading(false)
             data.pagination.count !== 0 && setTotalPages(Math.floor(data.pagination.total_count / data.pagination.count))

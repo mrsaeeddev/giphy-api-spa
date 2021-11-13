@@ -1,8 +1,9 @@
 import { Modal } from "react-bootstrap";
 import Image from '../Image/Image';
 import Video from '../Video/Video';
+import { LargeModalProps } from "./LargeModal.interface";
 
-function LargeModal(props: any) {
+function LargeModal(props: LargeModalProps) {
     return (
         <Modal
             size="lg"

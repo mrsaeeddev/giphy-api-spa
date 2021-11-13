@@ -43,7 +43,6 @@ function Main() {
             data.pagination.count !== 0 && setTotalPages(Math.floor(data.pagination.total_count / data.pagination.count))
         }).catch((error) => {
             setLoading(false)
-            console.log(error)
         });;
     }
 

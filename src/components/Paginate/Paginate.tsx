@@ -32,7 +32,6 @@ function Paginate(props: PaginateProps) {
                         totPages
                     ];
                 else {
-                    console.log('true')
                     pageArr = [
                         1,
                         "",
